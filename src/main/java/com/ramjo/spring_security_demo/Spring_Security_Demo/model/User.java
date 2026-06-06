@@ -6,27 +6,23 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 @Entity
-public class Student {
+public class User{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long rollno;
+    private Long id;
     private String firstname;
     private String lastname;
+    private String username;
+    private String password;
 
-    public Student(){}
+    public User(){}
 
-    public Student(Long rollno, String firstname, String lastname){
-        this.rollno = rollno;
-        this.firstname = firstname;
-        this.lastname = lastname;
+    public Long getId(){
+        return this.id;
     }
 
-    public Long getRollno(){
-        return this.rollno;
-    }
-
-    public void setRollno(Long rollno){
-        this.rollno = rollno;
+    public void setId(Long id){
+        this.id = id;
     }
 
     public String getFirstname() {
@@ -45,4 +41,19 @@ public class Student {
         this.lastname = lastname;
     }
 
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
 }
