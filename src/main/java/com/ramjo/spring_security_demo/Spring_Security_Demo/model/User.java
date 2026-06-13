@@ -1,9 +1,6 @@
 package com.ramjo.spring_security_demo.Spring_Security_Demo.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
 public class User{
@@ -14,8 +11,18 @@ public class User{
     private String lastname;
     private String username;
     private String password;
+    @Enumerated(EnumType.STRING)
+    private Role role;
 
     public User(){}
+
+    public Role getRole() {
+        return role;
+    }
+
+    public void setRole(Role role) {
+        this.role = role;
+    }
 
     public Long getId(){
         return this.id;
